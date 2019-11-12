@@ -7,12 +7,9 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      quote: {
-        quote: 'Hello World',
-        author: 'Akinwale Habib'
-      }
+      quote: {}
     }
-
+    
     this.makeHttpRequest = this.makeHttpRequest.bind(this);
     this.generateNewQuote = this.generateNewQuote.bind(this);
   }
@@ -32,6 +29,16 @@ class App extends React.Component{
     const endpoint = 'https://opinionated-quotes-api.gigalixirapp.com/v1/quotes?rand=true';
     const quote = await this.makeHttpRequest(endpoint);
     this.setState((state, props) => ({ quote }))
+  }
+
+  componentDidMount(){
+    let quote
+    (async () => {
+      quote = await this.makeHttpRequest('https://opinionated-quotes-api.gigalixirapp.com/v1/quotes?rand=true');
+      this.setState({
+        quote
+      });
+    })();
   }
 
   render(){
