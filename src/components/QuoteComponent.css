@@ -43,7 +43,7 @@
   margin: 10px auto;
   background-color: #dee3ec;
   color: #0b0e0e;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 0.9vmin);
   border-radius: 5px;
 }
 
