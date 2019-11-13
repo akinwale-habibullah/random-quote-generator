@@ -1,6 +1,6 @@
 import React from 'react';
 import './QuoteComponent.css';
-import '../../node_modules/@fortawesome/fontawesome-free/css/all.css'
+import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 const QuoteComponent = (props) => {
   return (
@@ -23,13 +23,8 @@ const QuoteComponent = (props) => {
           New Quote
         </button>
         <div id="share">
-          <a
-            href="https://google.com"><i className="fab fa-facebook-f"></i></a>
-          <a
-            href="https://twitter.com"><i className="fab fa-twitter"></i></a>
+          <a href={`https://twitter.com/intent/tweet?text=${props.quote.quote}-${props.quote.author}`}><i className="fab fa-twitter"></i></a>
         </div>
-
-        
       </div>
     </div>
   )
